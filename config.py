@@ -18,13 +18,24 @@ country_dict = {
     # ==========================================
     # 2. EUROPE (Eurozone & Major Economies)
     # ==========================================
-    "163": "Europe (Eurozone)", # IMF code for Euro Area
     "DE": "Europe (Germany)",
     "FR": "Europe (France)",
     "IT": "Europe (Italy)",
     "ES": "Europe (Spain)",
     "NL": "Europe (Netherlands)",
     "GB": "Europe (United Kingdom)",
+    "BE": "Europe (Belgium)",
+    "AT": "Europe (Austria)",
+    "PT": "Europe (Portugal)",
+    "GR": "Europe (Greece)",
+    "FI": "Europe (Finland)",
+    "IE": "Europe (Ireland)",
+    "DK": "Europe (Denmark)",
+    "SE": "Europe (Sweden)",
+    "PL": "Europe (Poland)",
+    "CZ": "Europe (Czechia)",
+    "RO": "Europe (Romania)",
+    "HU": "Europe (Hungary)",
 
     # ==========================================
     # 3. AMERICAS (North & South America)
@@ -46,4 +57,12 @@ country_dict = {
     "OM": "Middle East (Oman)",
     "BH": "Middle East (Bahrain)",
     "IQ": "Middle East (Iraq)"
+}
+
+us_economy_metrics = {
+    'CPI_All_Items': 'CPIAUCSL',         # Monthly
+    'Unemployment_Rate': 'UNRATE',       # Monthly
+    'Total_Nonfarm_Payrolls': 'PAYEMS',  # Monthly
+    'Real_GDP': 'GDPC1',                 # Quarterly
+    'Manufacturing_Investment': 'C307RX1Q020SBEA' # Quarterly
 }
