@@ -76,3 +76,7 @@ The Inflation Runway: The massive infusion of direct cash payments and aggressiv
 Exploding National Debt: The emergency stimulus packages, combined with reduced tax revenues from the 2017 corporate tax cuts and the 2020 economic freeze, added roughly $7.8 trillion to the gross national debt during Trump's single term. This drastic fiscal expansion significantly reduced the federal government's long-term budget flexibility.
 
 Labor Market Shift: Programs like the PPP successfully made an estimated 80% of corporate layoffs temporary rather than permanent. While this allowed for a rapid initial "V-shaped" hiring recovery in late 2020, it also accelerated broader, permanent structural shifts toward remote work and logistics-heavy industries.
+
+<p align="center">
+  <img src="images\Screenshot 2026-07-19 152346.png" alt="Power BI Economic Dashboard" width="800px">
+</p>
