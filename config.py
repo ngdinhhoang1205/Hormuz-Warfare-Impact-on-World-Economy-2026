@@ -3,61 +3,105 @@ country_dict = {
     # ==========================================
     # 1. SOUTHEAST ASIA (ASEAN)
     # ==========================================
-    "VN": "Southeast Asia (Vietnam)",
-    "TH": "Southeast Asia (Thailand)",
-    "SG": "Southeast Asia (Singapore)", 
-    "ID": "Southeast Asia (Indonesia)",
-    "MY": "Southeast Asia (Malaysia)",
-    "PH": "Southeast Asia (Philippines)",
-    "BN": "Southeast Asia (Brunei)",
-    "KH": "Southeast Asia (Cambodia)",
-    "LA": "Southeast Asia (Laos)",
-    "MM": "Southeast Asia (Myanmar)",
-    "TL": "Southeast Asia (Timor-Leste)",
+    "VN": "Viet Nam",                      # Chọn phiên bản chuẩn ISO chính thức
+    "TH": "Thailand",
+    "SG": "Singapore", 
+    "ID": "Indonesia",
+    "MY": "Malaysia",
+    "PH": "Philippines",
+    "BN": "Brunei",
+    "KH": "Cambodia",
+    "LA": "Laos",
+    "MM": "Myanmar",
+    "TL": "Timor-Leste",
 
     # ==========================================
     # 2. EUROPE (Eurozone & Major Economies)
     # ==========================================
-    "DE": "Europe (Germany)",
-    "FR": "Europe (France)",
-    "IT": "Europe (Italy)",
-    "ES": "Europe (Spain)",
-    "NL": "Europe (Netherlands)",
-    "GB": "Europe (United Kingdom)",
-    "BE": "Europe (Belgium)",
-    "AT": "Europe (Austria)",
-    "PT": "Europe (Portugal)",
-    "GR": "Europe (Greece)",
-    "FI": "Europe (Finland)",
-    "IE": "Europe (Ireland)",
-    "DK": "Europe (Denmark)",
-    "SE": "Europe (Sweden)",
-    "PL": "Europe (Poland)",
-    "CZ": "Europe (Czechia)",
-    "RO": "Europe (Romania)",
-    "HU": "Europe (Hungary)",
+    "DE": "Germany",
+    "FR": "France",
+    "IT": "Italy",
+    "ES": "Spain",
+    "NL": "Netherlands",
+    "GB": "United Kingdom",
+    "BE": "Belgium",
+    "AT": "Austria",
+    "PT": "Portugal",
+    "GR": "Greece",
+    "FI": "Finland",
+    "IE": "Ireland",
+    "DK": "Denmark",
+    "SE": "Sweden",
+    "PL": "Poland",
+    "CZ": "Czechia",
+    "RO": "Romania",
+    "HU": "Hungary",
+    "VA": "Holy See (Vatican City State)",  # Tên đầy đủ hơn
+    "UA": "Ukraine",
+    "TR": "Türkiye",                       # Tên chính thức mới
+    "XK": "Kosovo, Republic of",
 
     # ==========================================
     # 3. AMERICAS (North & South America)
     # ==========================================
-    "US": "Americas (United States)",
-    "CA": "Americas (Canada)",
-    "MX": "Americas (Mexico)",
-    "BR": "Americas (Brazil)",
-    "AR": "Americas (Argentina)",
-    "CO": "Americas (Colombia)",
+    "US": "United States",
+    "CA": "Canada",
+    "MX": "Mexico",
+    "BR": "Brazil",
+    "AR": "Argentina",
+    "CO": "Colombia",
+    "SR": "Suriname",
+    "SV": "El Salvador",
+    "SX": "Sint Maarten (Dutch part)",
+    "TT": "Trinidad and Tobago",
+    "UY": "Uruguay",
+    "VC": "Saint Vincent and the Grenadines",
+    "VE": "Venezuela, Bolivarian Republic", # Tên đầy đủ hơn
 
     # ==========================================
-    # 4. MIDDLE EAST (Strait of Hormuz Region)
+    # 4. MIDDLE EAST & CENTRAL ASIA
     # ==========================================
-    "SA": "Middle East (Saudi Arabia)", 
-    "AE": "Middle East (UAE)",          
-    "QA": "Middle East (Qatar)",
-    "KW": "Middle East (Kuwait)",
-    "OM": "Middle East (Oman)",
-    "BH": "Middle East (Bahrain)",
-    "IQ": "Middle East (Iraq)"
+    "SA": "Saudi Arabia", 
+    "AE": "UAE",          
+    "QA": "Qatar",
+    "KW": "Kuwait",
+    "OM": "Oman",
+    "BH": "Bahrain",
+    "IQ": "Iraq",
+    "SY": "Syrian Arab Republic",           # Tên đầy đủ hơn
+    "TJ": "Tajikistan",
+    "TM": "Turkmenistan",
+    "UZ": "Uzbekistan",
+    "YE": "Yemen",
+
+    # ==========================================
+    # 5. AFRICA
+    # ==========================================
+    "SN": "Senegal",
+    "SO": "Somalia",
+    "SS": "South Sudan",
+    "SZ": "Eswatini",
+    "TD": "Chad",
+    "TG": "Togo",
+    "TN": "Tunisia",
+    "TZ": "Tanzania, United Republic of",  # Tên đầy đủ hơn
+    "UG": "Uganda",
+    "ZA": "South Africa",
+    "ZM": "Zambia",
+    "ZW": "Zimbabwe",
+
+    # ==========================================
+    # 6. OCEANIA & OTHERS / REGIONAL
+    # ==========================================
+    "TO": "Tonga",
+    "TV": "Tuvalu",
+    "VU": "Vanuatu",
+    "WS": "Samoa",
+    "ST": "Sao Tome and Principe",
+    "SUH": "Former U.S.S.R.",
+    "U2": "Euro Area (Member States and Institutions of the Euro Area) changing composition"
 }
+
 
 country_dict_3_char = {
     # ==========================================
@@ -118,6 +162,8 @@ country_dict_3_char = {
     "BHR": "Middle East (Bahrain)",
     "IRQ": "Middle East (Iraq)"
 }
+
+
 
 
 us_economy_metrics = {
