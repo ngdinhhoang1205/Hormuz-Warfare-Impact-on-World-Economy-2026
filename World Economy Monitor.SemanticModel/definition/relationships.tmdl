@@ -1,0 +1,82 @@
+relationship 833b443e-98c0-4bbe-9ebd-880fe11d91d3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_consumer_price_index.original_period
+	toColumn: LocalDateTable_ff8b9ca8-079b-4150-8846-ee8b75e42211.Date
+
+relationship 62b2b910-538d-4a41-abaf-3383a0715ac4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_cb_policy_rates.original_period
+	toColumn: LocalDateTable_224dd0b7-5155-4f0c-8ad3-6dfc6cdb9900.Date
+
+relationship b982ab64-50e6-4b01-a3ef-169675838848
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_retail_sales.original_period
+	toColumn: LocalDateTable_21f8d766-408c-4519-9227-2b70000baeeb.Date
+
+relationship b767596a-c5d7-462b-9314-37e08c8c7f0e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_PMI.original_period
+	toColumn: LocalDateTable_4c68bd06-7e0a-4171-b5ed-2a6d1611a1ff.Date
+
+relationship 63582af1-bc39-4f48-901d-942057cd67bc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_trade_balance.original_period
+	toColumn: LocalDateTable_b35fdfd0-a791-4e1f-9eaa-0cf362c312d3.Date
+
+relationship 19fbd194-dd43-41fc-b008-8a4bb49f116b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: d_calendar.Date
+	toColumn: LocalDateTable_35297e2b-eb05-4156-83d9-d2d62e3b524b.Date
+
+relationship fa563554-3b0f-2b24-2ffc-05bf97844dff
+	fromColumn: f_consumer_price_index.period
+	toColumn: d_calendar.Date
+
+relationship af3b7a19-a657-42a4-2a95-5db160aeac79
+	fromColumn: f_cb_policy_rates.period
+	toColumn: d_calendar.Date
+
+relationship 92ac8396-df2d-af67-2a1a-e0140679d73a
+	fromColumn: f_industrial_production_index.Date
+	toColumn: d_calendar.Date
+
+relationship 29c6bf0f-0992-7f93-afe7-f6ce2f28a09b
+	fromColumn: f_PMI.period
+	toColumn: d_calendar.Date
+
+relationship 71e36e26-8f3d-5960-a4dc-b03302214019
+	fromColumn: f_retail_sales.period
+	toColumn: d_calendar.Date
+
+relationship 70566e88-9629-53d1-7ec7-9e35b17a4881
+	fromColumn: f_trade_balance.period
+	toColumn: d_calendar.Date
+
+relationship 144bb198-3bd9-89bc-daf7-dee7d9404a81
+	fromColumn: f_unemployment_rate.period
+	toColumn: d_calendar.Date
+
+relationship 39413cb9-e086-e1b6-78af-f7b8cc720f6a
+	fromColumn: f_gross_domestic_product.period
+	toColumn: d_calendar.Date
+
+relationship a651a461-01d2-4189-9863-6c9752bf573e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_import_value.original_period
+	toColumn: LocalDateTable_da58b041-c6a4-43ae-b3c8-f12f4a24875a.Date
+
+relationship 80279254-b3a7-4b00-bf73-59de431b1b51
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_import_value.period
+	toColumn: LocalDateTable_1df66d2c-e9ef-4337-a7e0-407649cce150.Date
+
+relationship da6f87fa-c293-4256-9c04-5a3942baf00c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_export_value.original_period
+	toColumn: LocalDateTable_4a7bf3ce-4222-44d5-a6d8-09c9299768ec.Date
+
+relationship 45e35b10-fddf-4ede-a334-9d46c81f8a83
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_export_value.period
+	toColumn: LocalDateTable_49926afe-7b75-4802-b27b-0d5412b464b7.Date
+

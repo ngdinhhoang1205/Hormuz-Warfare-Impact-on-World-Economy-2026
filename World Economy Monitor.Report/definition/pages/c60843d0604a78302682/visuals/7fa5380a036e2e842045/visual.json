@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "7fa5380a036e2e842045",
+  "position": {
+    "x": 0,
+    "y": 534.95440729483289,
+    "z": 1000,
+    "height": 184.80243161094225,
+    "width": 549.54407294832833,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures_Table"
+                    }
+                  },
+                  "Property": "_mom_ipi"
+                }
+              },
+              "queryRef": "Measures_Table._mom_ipi",
+              "nativeQueryRef": "_mom_ipi"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures_Table"
+                    }
+                  },
+                  "Property": "_current_month"
+                }
+              },
+              "queryRef": "Measures_Table._current_month",
+              "nativeQueryRef": "_current_month"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures_Table"
+                    }
+                  },
+                  "Property": "_previous_month"
+                }
+              },
+              "queryRef": "Measures_Table._previous_month",
+              "nativeQueryRef": "_previous_month"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures_Table"
+                    }
+                  },
+                  "Property": "_current_year"
+                }
+              },
+              "queryRef": "Measures_Table._current_year",
+              "nativeQueryRef": "_current_year"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures_Table"
+                    }
+                  },
+                  "Property": "_previous_year"
+                }
+              },
+              "queryRef": "Measures_Table._previous_year",
+              "nativeQueryRef": "_previous_year"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

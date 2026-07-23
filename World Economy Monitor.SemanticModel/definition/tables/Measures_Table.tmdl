@@ -1,0 +1,73 @@
+table Measures_Table
+	lineageTag: 2661a5aa-3679-4034-9d80-ba8e767857a0
+
+	measure _current_gdp = SUMX(FILTER(f_gross_domestic_product, YEAR(f_gross_domestic_product[period]) = [_current_year]), f_gross_domestic_product[value])
+		formatString: #,0
+		lineageTag: 771115f7-48f8-4ad6-8232-f48a91ff8e83
+
+	measure _yoy_gdp =
+			
+			VAR current_gdp = [_current_gdp]
+			VAR last_year = [_previous_year]
+			VAR last_gdp = SUMX(FILTER(f_gross_domestic_product, YEAR(f_gross_domestic_product[period]) = last_year), f_gross_domestic_product[value])
+			RETURN DIVIDE(current_gdp-last_gdp, last_gdp, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 6910365f-2c5f-4338-8e79-ffe5f05290ba
+
+	measure _current_year = YEAR(NOW())-2
+		formatString: 0
+		lineageTag: 84d99c77-3cbb-4786-9316-596564a90962
+		dataCategory: Uncategorized
+
+	measure _total_gdp = SUMX(f_gross_domestic_product, f_gross_domestic_product[value])
+		lineageTag: f04dbf27-bae1-40d4-8633-3af4b01be867
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure _yoy_ipi =
+			
+			VAR current_year = [_current_year]
+			VAR previous_year = [_previous_year]
+			VAR current_ipi = SUMX(FILTER(f_industrial_production_index, YEAR(f_industrial_production_index[Date])=current_year), f_industrial_production_index[value])
+			VAR previous_ipi = SUMX(FILTER(f_industrial_production_index, YEAR(f_industrial_production_index[Date])=previous_year), f_industrial_production_index[value])
+			RETURN DIVIDE(current_ipi-previous_ipi, previous_ipi, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 98ca56b1-bba7-44f3-9289-b677f32a2d71
+
+	measure _previous_year = [_current_year]-1
+		formatString: 0
+		lineageTag: 4e8d848d-a201-4ec9-a69b-d52d7eaba04b
+
+	measure _mom_ipi =
+			
+			VAR current_month = [_current_month]
+			VAR previous_month = [_previous_month]
+			VAR current_ipi = SUMX(FILTER(f_industrial_production_index, YEAR(f_industrial_production_index[Date])*100+MONTH(f_industrial_production_index[Date])=current_month), f_industrial_production_index[value])
+			VAR previous_ipi = SUMX(FILTER(f_industrial_production_index, YEAR(f_industrial_production_index[Date])*100+MONTH(f_industrial_production_index[Date])=previous_month), f_industrial_production_index[value])
+			RETURN DIVIDE(current_ipi-previous_ipi, previous_ipi, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 8791e000-4a27-4234-943b-ba964f856d4f
+
+	measure _current_month = [_current_year]*100+MONTH(MAXX(FILTER(f_industrial_production_index, YEAR(f_industrial_production_index[Date])=[_current_year]), f_industrial_production_index[Date]))
+		formatString: 0
+		lineageTag: f81da267-89bb-495f-b5af-35ddbef6f043
+
+	measure _previous_month = [_current_month]-1
+		formatString: 0
+		lineageTag: f9da6273-8208-45ce-bbf0-58960575012b
+
+	column Value
+		formatString: 0
+		lineageTag: 42ec9451-10d8-4f13-9535-08121cb2c23c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Measures_Table = calculated
+		mode: import
+		source = {BLANK()}
+
+	annotation PBI_Id = 3924ee70fef84d899f7d651e2c218d2f
+
