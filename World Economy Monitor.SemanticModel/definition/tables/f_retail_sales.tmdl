@@ -76,7 +76,7 @@ table f_retail_sales
 
 	column period
 		dataType: dateTime
-		formatString: Long Date
+		formatString: yyyy-mm-dd
 		lineageTag: 7637f61a-6776-4099-9766-3f3060d97d91
 		summarizeBy: none
 		sourceColumn: period
@@ -84,6 +84,8 @@ table f_retail_sales
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column original_value
 		dataType: double

@@ -1,7 +1,15 @@
 table Measures_Table
 	lineageTag: 2661a5aa-3679-4034-9d80-ba8e767857a0
 
-	measure _current_gdp = SUMX(FILTER(f_gross_domestic_product, YEAR(f_gross_domestic_product[period]) = [_current_year]), f_gross_domestic_product[value])
+	measure _current_gdp = ```
+			
+			VAR current_year = [_current_year]
+			RETURN    SUMX(
+			        FILTER(f_gross_domestic_product, YEAR(f_gross_domestic_product[period]) = current_year), 
+			        f_gross_domestic_product[value]
+			        )
+			
+			```
 		formatString: #,0
 		lineageTag: 771115f7-48f8-4ad6-8232-f48a91ff8e83
 
@@ -55,6 +63,100 @@ table Measures_Table
 	measure _previous_month = [_current_month]-1
 		formatString: 0
 		lineageTag: f9da6273-8208-45ce-bbf0-58960575012b
+
+	measure _yoy_cpi =
+			
+			VAR current_year = [_current_year]
+			VAR previous_year = [_previous_year]
+			VAR current_cpi = SUMX(FILTER(f_consumer_price_index, YEAR(f_consumer_price_index[period])=current_year), f_consumer_price_index[value])
+			VAR previous_cpi = SUMX(FILTER(f_consumer_price_index, YEAR(f_consumer_price_index[period])=previous_year), f_consumer_price_index[value])
+			
+			RETURN DIVIDE(current_cpi-previous_cpi, previous_cpi, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 459786dc-d6e6-4654-baae-550fd2f6210e
+
+	measure _mom_cpi =
+			
+			VAR current_month = [_current_month]
+			VAR previous_month = [_previous_month]
+			VAR current_cpi = SUMX(FILTER(f_consumer_price_index, YEAR(f_consumer_price_index[period])*100 + MONTH(f_consumer_price_index[period])=current_month), f_consumer_price_index[value])
+			VAR previous_cpi = SUMX(FILTER(f_consumer_price_index, YEAR(f_consumer_price_index[period])*100 + MONTH(f_consumer_price_index[period])=previous_month), f_consumer_price_index[value])
+			
+			RETURN DIVIDE(current_cpi-previous_cpi, previous_cpi, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 356619cc-f2ec-4406-a71b-8a69835aae58
+
+	measure _current_policy_rate_us =
+			
+			VAR current_month = [_current_month]
+			VAR policy_rate = AVERAGEX(FILTER(f_cb_policy_rates, AND(YEAR(f_cb_policy_rates[period])*100+MONTH(f_cb_policy_rates[period])=current_month, f_cb_policy_rates[REF_AREA]="US")), f_cb_policy_rates[value]/100)
+			
+			RETURN policy_rate
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: df75c173-e20d-40ad-8550-b08c8251f779
+
+	measure _mom_policy_rate =
+			
+			VAR current_month = [_current_month]
+			VAR previous_month = [_previous_month]
+			VAR current_policy_rate = AVERAGEX(FILTER(f_cb_policy_rates, AND(YEAR(f_cb_policy_rates[period])*100+MONTH(f_cb_policy_rates[period])=current_month, f_cb_policy_rates[REF_AREA]="US")), f_cb_policy_rates[value])
+			VAR previous_policy_rate = AVERAGEX(FILTER(f_cb_policy_rates, AND(YEAR(f_cb_policy_rates[period])*100+MONTH(f_cb_policy_rates[period])=previous_month, f_cb_policy_rates[REF_AREA]="US")), f_cb_policy_rates[value])
+			
+			RETURN 100*(current_policy_rate-previous_policy_rate)
+		formatString: 0
+		lineageTag: 140e096d-5882-4fb3-b4e5-3dbc0222115d
+
+	measure _current_unemployment_rate =
+			
+			VAR current_year = [_current_year]
+			VAR current_unemployment_rate = CALCULATE(
+			    AVERAGE(f_unemployment_rate[value]),
+			    YEAR(f_unemployment_rate[period])=current_year)
+			
+			RETURN current_unemployment_rate/100
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 161cab18-2866-47e5-b248-398830435ee7
+
+	measure _yoy_unemployment_rate =
+			
+			VAR current_year = [_current_year]
+			VAR previous_year = [_previous_year]
+			VAR current_unemployment_rate = CALCULATE(
+			    AVERAGE(f_unemployment_rate[value]),
+			    YEAR(f_unemployment_rate[period])=current_year)
+			VAR previous_unemployment_rate = CALCULATE(
+			    AVERAGE(f_unemployment_rate[value]),
+			    YEAR(f_unemployment_rate[period])=previous_year)
+			
+			RETURN DIVIDE(current_unemployment_rate-previous_unemployment_rate, previous_unemployment_rate, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ae029301-14a7-4960-83ed-860ef4c9286e
+
+	measure _yoy_retail =
+			
+			VAR current_year = [_current_year]-1
+			VAR previous_year = [_previous_year]-1
+			VAR current_retail = SUMX(FILTER(f_retail_sales, YEAR(f_retail_sales[period])=current_year), f_retail_sales[value])
+			VAR previous_retail = SUMX(FILTER(f_retail_sales, YEAR(f_retail_sales[period])=previous_year), f_retail_sales[value])
+			
+			RETURN DIVIDE(current_retail-previous_retail, previous_retail, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d9b8ba7e-1d2b-401d-b64d-ee0a2422aa7a
+
+	measure _current_gpd_year = YEAR(MAX(f_gross_domestic_product[period]))
+		formatString: 0
+		lineageTag: a820c542-c430-441c-bad4-2fd9b8f23e14
+
+	measure _mom_retail =
+			
+			VAR current_month = [_current_month]-101
+			VAR previous_month = [_previous_month]-101
+			VAR current_retail = SUMX(FILTER(f_retail_sales, YEAR(f_retail_sales[period])*100+MONTH(f_retail_sales[period])=current_month), f_retail_sales[value])
+			VAR previous_retail = SUMX(FILTER(f_retail_sales, YEAR(f_retail_sales[period])*100+MONTH(f_retail_sales[period])=previous_month), f_retail_sales[value])
+			
+			RETURN DIVIDE(current_retail-previous_retail, previous_retail, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: c618621a-d96c-4849-b755-b51a451ada6c
 
 	column Value
 		formatString: 0

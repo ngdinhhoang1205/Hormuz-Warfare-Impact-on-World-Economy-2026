@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "d71f2634407cba9673c1",
+  "name": "bd6740de80408c371cb3",
   "position": {
     "x": 317.08206686930095,
-    "y": 228.57142857142858,
-    "z": 4000,
+    "y": 534.95440729483289,
+    "z": 8000,
     "height": 140.06079027355625,
     "width": 286.93009118541033,
-    "tabOrder": 4000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,12 +23,12 @@
                       "Entity": "Measures_Table"
                     }
                   },
-                  "Property": "_mom_ipi"
+                  "Property": "_mom_policy_rate"
                 }
               },
-              "queryRef": "Measures_Table._mom_ipi",
-              "nativeQueryRef": "MoM IPI",
-              "displayName": "MoM IPI"
+              "queryRef": "Measures_Table._mom_policy_rate",
+              "nativeQueryRef": "MoM Policy Rate",
+              "displayName": "MoM Policy Rate"
             }
           ]
         }
@@ -43,7 +43,7 @@
                     "Entity": "Measures_Table"
                   }
                 },
-                "Property": "_mom_ipi"
+                "Property": "_mom_policy_rate"
               }
             },
             "direction": "Descending"
@@ -51,56 +51,6 @@
         ],
         "isDefaultSort": true
       }
-    },
-    "objects": {
-      "label": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ],
-      "value": [
-        {
-          "properties": {
-            "horizontalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ],
-      "outline": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ]
     },
     "visualContainerObjects": {
       "border": [
@@ -157,18 +107,24 @@
                   "Value": "true"
                 }
               }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'MoM IPI'"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
+                  "Value": "'Percentage Point'"
                 }
               }
             }
@@ -181,7 +137,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "189e94c663b07839045d",
+        "name": "d01d27762510e8a177c0",
         "field": {
           "Measure": {
             "Expression": {
@@ -189,7 +145,7 @@
                 "Entity": "Measures_Table"
               }
             },
-            "Property": "_mom_ipi"
+            "Property": "_mom_policy_rate"
           }
         },
         "type": "Advanced"

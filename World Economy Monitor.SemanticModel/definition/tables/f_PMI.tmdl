@@ -60,7 +60,7 @@ table f_PMI
 
 	column original_period
 		dataType: dateTime
-		formatString: Long Date
+		formatString: yyyy-mm-dd
 		lineageTag: 6a995313-bf3c-4fc4-8b53-d66cdbb66b67
 		summarizeBy: none
 		sourceColumn: original_period
@@ -74,9 +74,11 @@ table f_PMI
 
 		annotation UnderlyingDateTimeDataType = Date
 
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
 	column period
 		dataType: dateTime
-		formatString: Long Date
+		formatString: yyyy-mm-dd
 		lineageTag: 0b6449cb-17ce-47cf-b2d4-bd3d6eec41df
 		summarizeBy: none
 		sourceColumn: period
@@ -84,6 +86,8 @@ table f_PMI
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column original_value
 		dataType: string

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "d71f2634407cba9673c1",
+  "name": "def3e6001a0a53738a52",
   "position": {
-    "x": 317.08206686930095,
+    "x": 624.43768996960489,
     "y": 228.57142857142858,
-    "z": 4000,
+    "z": 11000,
     "height": 140.06079027355625,
-    "width": 286.93009118541033,
-    "tabOrder": 4000
+    "width": 276.23100303951367,
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,12 +23,12 @@
                       "Entity": "Measures_Table"
                     }
                   },
-                  "Property": "_mom_ipi"
+                  "Property": "_yoy_retail"
                 }
               },
-              "queryRef": "Measures_Table._mom_ipi",
-              "nativeQueryRef": "MoM IPI",
-              "displayName": "MoM IPI"
+              "queryRef": "Measures_Table._yoy_retail",
+              "nativeQueryRef": "YoY Retail Sales",
+              "displayName": "YoY Retail Sales"
             }
           ]
         }
@@ -43,7 +43,7 @@
                     "Entity": "Measures_Table"
                   }
                 },
-                "Property": "_mom_ipi"
+                "Property": "_yoy_retail"
               }
             },
             "direction": "Descending"
@@ -51,56 +51,6 @@
         ],
         "isDefaultSort": true
       }
-    },
-    "objects": {
-      "label": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ],
-      "value": [
-        {
-          "properties": {
-            "horizontalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ],
-      "outline": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ]
     },
     "visualContainerObjects": {
       "border": [
@@ -147,33 +97,6 @@
             }
           }
         }
-      ],
-      "title": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'MoM IPI'"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            }
-          }
-        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -181,7 +104,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "189e94c663b07839045d",
+        "name": "f0fc5b8105064035e254",
         "field": {
           "Measure": {
             "Expression": {
@@ -189,7 +112,7 @@
                 "Entity": "Measures_Table"
               }
             },
-            "Property": "_mom_ipi"
+            "Property": "_yoy_retail"
           }
         },
         "type": "Advanced"
